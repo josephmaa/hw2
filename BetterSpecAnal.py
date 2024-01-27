@@ -38,6 +38,7 @@ def betterSpecAnal(im: np.ndarray, block_size: int = 64, num_windows: int = 5) -
         Z += np.square(abs(np.fft.fft2(z)) / block_size)
     
     # Use fftshift to move the zero frequencies to the center of the plot.
+    Z /= len(block_offsets)
     Z = np.fft.fftshift(Z)
 
     # Compute the logarithm of the Power Spectrum.
