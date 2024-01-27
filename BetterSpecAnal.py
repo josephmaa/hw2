@@ -15,7 +15,7 @@ def betterSpecAnal(im: np.ndarray, block_size: int = 64, num_windows: int = 5) -
     Calculate the power spectrum density for the image.
     """
     height, width = im.shape
-    print('h', 'w', height, width)
+    # print('h', 'w', height, width)
     # Calculate the central window.
     block_width = block_size//2
     height_center, width_center = height//2-block_width, width//2-block_width
@@ -26,13 +26,13 @@ def betterSpecAnal(im: np.ndarray, block_size: int = 64, num_windows: int = 5) -
 
     # Calculate the outer product for the hamming window.
     W = np.outer(np.hamming(block_size), np.hamming(block_size))
-    print(W)
+    # print(W)
 
     Z = np.zeros((block_size, block_size))
     
     for dy, dx in block_offsets:
         y, x = height_center + dy, width_center + dx
-        print(y, x)
+        # print(y, x)
         z = W * im[y: y + block_size, x: x + block_size]
         # Calculate the power spectrum for the window.
         Z += np.square(abs(np.fft.fft2(z)) / block_size)
