@@ -59,30 +59,33 @@ def betterSpecAnal(im: np.ndarray, block_size: int = 64, num_windows: int = 5) -
 
     plt.show()
 
-# Read in a gray scale TIFF image.
-im = Image.open('img04g.tif')
-# print('Read img04.tif.')
-# print('Image size: ', im.size)
+def main():
+    # Read in a gray scale TIFF image.
+    im = Image.open('img04g.tif')
+    # print('Read img04.tif.')
+    # print('Image size: ', im.size)
 
-# Display image object by PIL.
-# im.show(title='image')
+    # Display image object by PIL.
+    # im.show(title='image')
 
-# Import Image Data into Numpy array.
-# The matrix x contains a 2-D array of 8-bit gray scale values. 
-x = np.array(im)
-print('Data type: ', x.dtype)
+    # Import Image Data into Numpy array.
+    # The matrix x contains a 2-D array of 8-bit gray scale values. 
+    x = np.array(im)
+    print('Data type: ', x.dtype)
 
-# Display numpy array by matplotlib.
-# plt.imshow(x, cmap=plt.cm.gray)
-# plt.title('Image')
+    # Display numpy array by matplotlib.
+    # plt.imshow(x, cmap=plt.cm.gray)
+    # plt.title('Image')
 
-# # Set colorbar location. [left, bottom, width, height].
-# cax =plt.axes([0.9, 0.15, 0.04, 0.7]) 
-# plt.colorbar(cax=cax)
-# plt.show()
+    # # Set colorbar location. [left, bottom, width, height].
+    # cax =plt.axes([0.9, 0.15, 0.04, 0.7]) 
+    # plt.colorbar(cax=cax)
+    # plt.show()
 
-# x = np.double(x)/255.0
-betterSpecAnal(x)
+    # x = np.double(x)/255.0
+    betterSpecAnal(x)
 
+if __name__ == "__main__":
+    main()
 
 
